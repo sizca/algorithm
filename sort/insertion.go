@@ -8,24 +8,24 @@ import "fmt"
 // insert : [], i = [i]
 //          [x:xs], i = if x > i then [i:x:xs]
 //                               else [x:insert(xs,i)]
-func InsertionSort(a []int) []int {
-	if len(a) == 0 {
-		return []int{}
+func InsertionSort(items []int) []int {
+	if len(items) == 0 {
+		return items[:]
 	}
 
-	x, xs := a[0], a[1:]
+	x, xs := items[0], items[1:]
 
 	return insert(InsertionSort(xs), x)
 }
 
-func insert(a []int, i int) (sorted []int) {
-	if len(a) == 0 {
+func insert(items []int, i int) (sorted []int) {
+	if len(items) == 0 {
 		return []int{i}
 	}
 
-	x, xs := a[0], a[1:]
+	x, xs := items[0], items[1:]
 	if x > i {
-		return append([]int{i}, a...)
+		return append([]int{i}, items...)
 	}
 
 	return append([]int{x}, insert(xs, i)...)
