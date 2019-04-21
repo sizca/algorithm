@@ -83,17 +83,17 @@ func quickSortInPlace(items []int, left, right int) {
 
 func divide(items []int, left, right int) int {
 	fmt.Printf("divide(items, %d, %d)\n", left, right)
-	p := left
-	pivot := items[left]
+	pivot := left
+	pv := items[pivot]
 	low := left + 1
 	high := right
 
 	for low <= high {
-		for low <= right && items[low] <= pivot {
+		for low <= right && items[low] <= pv {
 			low++
 		}
 
-		for left+1 <= high && pivot <= items[high] {
+		for left+1 <= high && pv <= items[high] {
 			high--
 		}
 
@@ -106,9 +106,9 @@ func divide(items []int, left, right int) int {
 	if left < high {
 		items[left], items[high] = items[high], items[left]
 		fmt.Println(items)
-		p = high
+		pivot = high
 	}
 
-	fmt.Println("pivot:", p)
-	return p
+	fmt.Println("pivot:", pivot)
+	return pivot
 }
