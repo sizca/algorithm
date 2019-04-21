@@ -30,3 +30,13 @@ func TestMergeSortInPlace(t *testing.T) {
 	fmt.Println(testItems2)
 	MergeSortInPlace(testItems2)
 }
+
+func TestQuickSort(t *testing.T) {
+	fmt.Println(testItems2)
+	fmt.Println(QuickSort(testItems2))
+}
+
+func TestQuickSortInPlace(t *testing.T) {
+	fmt.Println(testItems2)
+	QuickSortInPlace(testItems2)
+}
